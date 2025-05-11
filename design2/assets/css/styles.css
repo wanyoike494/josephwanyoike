@@ -3,7 +3,7 @@
 /*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
-  --nav-width: 324px
+  --nav-width: 324px;
 
   
   /*===== Font weight =====*/
@@ -37,7 +37,7 @@
   /*===== z index =====*/
   --z-fixed: 100;
 } 
-@media screen and(min-width: 768px) {
+@media screen and (min-width: 768px) {
   :root{
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
@@ -150,13 +150,13 @@ img{
 .nav__menu{
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 90%;
   height: 100vh;
   padding: 3rem;
   align-items: center;
   background-color: var(--first-color);
-  transition: 5s;
+  transition: 0.5s;
 }
 
 .nav__close{
@@ -168,16 +168,68 @@ img{
   cursor: pointer;  
 }
 
-
+/* 15:41 */
 
 /*=== Show menu ===*/
+.nav__item{
+  margin-bottom: var(--mb-4);
+}
 
+.nav__link{
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--first-color-lighten);
+  font-weight: var(--font-bold);
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--text-color);
+}
+
+
+.nav__toggle{
+  color: var(--first-color-dark);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* -------show menu--------- */
+.show{
+  left: 0;
+}
 
 /*Active menu*/
-
+.active{
+  color: var(--text-color);
+}
 
 /*===== HOME =====*/
-
+.home__container{
+  height: calc(100vh - var(--header-height));
+  align-items: center;
+}
+.home__data{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  text-align: center;
+}
+.home__img{
+  padding-top: 1.3rem;
+  padding-left: .8rem;
+  width: 200px; /*<!--160px ----------customized for self---------------------------------------------->*/
+  height:200px; /*<!--160px ----------customized for self---------------------------------------------->*/
+  background-color: white;     /*<!-var(--first-color)- customized for self---------------------------------------------->*/
+  border-radius: 50%;
+  overflow: hidden; 
+  margin-bottom: var(--mb-2);
+}
+/* .home__img img{
+  width: 155px;
+ 
+} */
 
 /*BUTTONS*/
 
