@@ -303,10 +303,119 @@ img{
   color: var(--first-color-lighten);
 }
 /* ===== ABOUT =====*/
+.about__container{
+  row-gap: 2rem;
+}
+.about__data{
+  text-align: center;
+  display: flex;       /*this is personal*/
+  flex-direction: column; /*This will center all children vertically*/
+  align-items: center; /*This will center all children horizontally*/
+}
 
+.about__desscription{
+  margin-bottom: var(--mb-4);
+}
+.about__img{
+  width: 150px;
+  border-radius: .5rem;
+  margin-bottom: 0 auto;
+  /* display: block; */
+  
+ 
+}
 
+/* ===== WDAIP LINK =====*/
+.wdaiplink{
+  color: green;
+}
+
+.about__information{
+  margin-bottom: var(--mb-4);
+}
+
+.about__information-title{
+  font-size: var(--h3-font-size);
+  color: var(--first-color-dark);
+  margin-bottom: var(--mb-2);
+}
+
+.about__information-data{
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  margin-bottom: var(--mb-3);
+}
+
+.about__information-icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-right: var(--mb-2);
+}
+.about__information-subtitle{
+  display: block;
+  font-weight: var(--font-semi-bold)
+}
+
+.about__information-subtitle-small{
+  font-size: var(--small-font-size);
+}
 /* ===== SKILLS =====*/
+.skills__container{
+  row-gap: 2rem;
+}
 
+.skills__subtitle{
+  font-size: var(--h3-font-size);
+  color: var(--first-color-dark);
+  margin-bottom: var(--mb-2);
+}
+
+
+.skills__data{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--mb-2);
+  margin-bottom: var(--mb-4);
+}
+
+.skils__name{
+  text-transform: uppercase;
+}
+
+.skills__bar{
+  position: absolute;
+  bottom: -.75rem;
+  height: 0.25rem;
+  background-color: var(--first-color);
+}
+.skills__python{
+  width: 50%;
+}
+.skills__r{
+  width: 50%;
+}
+.skills__orange{
+  width: 50%;
+}
+.skills__pythonviz{
+  width: 50%;
+}
+.skills__jsvis{
+  width: 50%;
+}
+.skills__rvis{
+  width: 50%;
+}
+.skills__weka{
+  width: 50%;
+}
+.skills__knime{
+  width: 50%;
+}
+
+/* 37:46 */
 
 /* ===== EDUCATION =====*/
 
