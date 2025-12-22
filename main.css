@@ -7,7 +7,7 @@
     --color-bg-secondary: #242424;
     --color-bg-footer: #151515;
     --color-white: #ffffff;
-    --color-text: #676767;
+    --color-text: white;
     --color-border: #373737;
   
     /* Font & Typography
@@ -328,11 +328,16 @@
     font-weight: var(--fw-regular);
     color: var(--color-text);
   }
+  .hero__img{
+    height: 420px;
+  }
   
   @media screen and (max-width: 968px) {
     .hero__img {
       width: 280px;
       justify-self: center;
+      height: 330px;
+      
     }
   }
   
