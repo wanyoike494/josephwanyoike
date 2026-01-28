@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*----------------------------------navigation bar------------------------------------------------------------------------*/
+        .navigationBar {
+            width: 100%;
+            padding: 1em 1.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navigationLeft {
+            display: flex;
+            gap: 1.5em;
+            margin-left: auto;
+        }
+
+        .navigationLeft a {
+            text-decoration: none;
+            color: #150c41;
+            font-weight: 700;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 1.4em;
+            color: #150c41;
+            text-decoration: none;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            color: #e3193b;
+        }
+        
+        .logo-main {
+            color: #150c41;
+        }
+        
+        .logo-accent {
+            color: #1956e3;
+            margin-left: 0.3em;
+        }
+    
+        /* Hover effects */
+        .logo a:hover {
+            color: #1956e3;
+        }
+        
+        .logo a {
+            transition: color 0.3s ease;
+        }
+
+        .navigationLeft a {
+            transition: color 0.3s ease;
+        }
+
+        .navigationLeft a:hover {
+            color: #1956e3;
+        }
+
+        /* Hamburger hidden on desktop */
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #150c41;
+        }
+
+        /*---------------------------------game container----------------------------------------------------------------------------------*/
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            width: 100%;
+            max-width: 420px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #150c41;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            flex: 1 1 120px;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #667eea;
+            color: white;
+            transition: transform 0.15s ease, background 0.15s ease;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: #5a6fdc;
+            transform: translateY(-2px);
+        }
+
+        .reset {
+            background: #ff6b6b;
+        }
+
+        .reset:hover {
+            background: #e85c5c;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        .moves {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .outcome {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .outcome.win { color: #2ecc71; }
+        .outcome.lose { color: #e74c3c; }
+        .outcome.tie { color: #f39c12; }
+
+        .score {
+            font-size: 0.95rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /*-----------------------------------------------------Footer css----------------------------------------------------*/
+        .footer {
+            width: 100%;
+            padding: 1em;
+            text-align: center;
+            font-size: 0.9em;
+            color: #150c41;
+        }
+
+        .footer a {
+            color: #1956e3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #150c41;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .navigationLeft {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+                padding: 1em 0;
+                display: none;
+                box-shadow: 0 1em 2em rgba(0,0,0,0.2);
+                font-weight: 200;
+                font-size: 1.1em;
+                z-index: 1000;
+            }
+            
+            .navigationLeft.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigationBar">
+        <div class="logo">
+            <a href="https://josephwanyoike.com/NJW_DEV/index.html">NJW Dev</a>
+            <span class="logo-main">Rock Paper Scissors</span>
+        </div>
+
+        <div class="navigationLeft">
+            <a href="https://www.worlddataanalysis.com">World Data Analysis</a>
+            <a href="https://www.josephwanyoike.com">Joseph Wanyoike</a>
+        </div>
+        
+        <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+
+    <div class="main-content">
+        <div class="game-container">
+            <h1>Rock Paper Scissors</h1>
+
+            <div class="buttons">
+                <button onclick="playGame('rock')">✊ Rock</button>
+                <button onclick="playGame('paper')">📄 Paper</button>
+                <button onclick="playGame('scissors')">✂️ Scissors</button>
+                <button class="reset" onclick="resetScore()">Reset</button>
+            </div>
+
+            <div class="result">
+                <p class="moves"></p>
+                <p class="outcome"></p>
+                <p class="score"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            © <span id="year"></span>
+            <a href="https://www.josephwanyoike.com" target="_blank">
+                Joseph Wanyoike Njoroge
+            </a>
+            . All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburger");
+        const navLeft = document.querySelector(".navigationLeft");
+
+        hamburger.addEventListener("click", () => {
+            navLeft.classList.toggle("active");
+        });
+
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Game logic - using in-memory storage instead of localStorage
+        let score = {
+            Wins: 0,
+            Loses: 0,
+            Tie: 0
+        };
+
+        updateScoreUI();
+
+        function playGame(playerMove) {
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            if (playerMove === computerMove) {
+                result = 'Tie';
+            } else if (
+                (playerMove === 'rock' && computerMove === 'scissors') ||
+                (playerMove === 'paper' && computerMove === 'rock') ||
+                (playerMove === 'scissors' && computerMove === 'paper')
+            ) {
+                result = 'You win';
+                score.Wins++;
+            } else {
+                result = 'You lose';
+                score.Loses++;
+            }
+
+            if (result === 'Tie') score.Tie++;
+
+            document.querySelector('.moves').textContent =
+                `You chose ${playerMove}. Computer chose ${computerMove}.`;
+
+            const outcomeEl = document.querySelector('.outcome');
+            outcomeEl.textContent = result;
+            outcomeEl.className = 'outcome ' +
+                (result === 'You win' ? 'win' : result === 'You lose' ? 'lose' : 'tie');
+
+            updateScoreUI();
+        }
+
+        function updateScoreUI() {
+            document.querySelector('.score').textContent =
+                `Wins: ${score.Wins} | Ties: ${score.Tie} | Losses: ${score.Loses}`;
+        }
+
+        function resetScore() {
+            score = { Wins: 0, Loses: 0, Tie: 0 };
+            updateScoreUI();
+
+            document.querySelector('.moves').textContent = '';
+            document.querySelector('.outcome').textContent = '';
+        }
+
+        function pickComputerMove() {
+            const moves = ['rock', 'paper', 'scissors'];
+            return moves[Math.floor(Math.random() * moves.length)];
+        }
+    </script>
+
+</body>
+</html>
