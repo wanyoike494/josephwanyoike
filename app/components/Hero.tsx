@@ -1,4 +1,5 @@
 import React from "react";
+import josephImg from "../joseph.jpg";
 
 export default function Hero() {
   const socialLinks = [
@@ -174,7 +175,7 @@ export default function Hero() {
               {/* Profile Image container */}
               <div className="absolute inset-[3px] rounded-[21px] overflow-hidden bg-zinc-950">
                 <img
-                  src="https://josephwanyoike.com/assets/img/Joseph%20Wanyoike.jpg"
+                  src={josephImg.src}
                   alt="Joseph Wanyoike Njoroge"
                   className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 scale-[1.05] hover:scale-100"
                 />
